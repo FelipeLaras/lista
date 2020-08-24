@@ -3,9 +3,9 @@
     //variaveis para conexao
 
     $servername = 'localhost';
-    $username = 'servopa';
-    $password = 'qtbvar03';
-    $dbname = 'glpi';
+    $username = 'user';
+    $password = 'pass';
+    $dbname = 'databesa';
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
