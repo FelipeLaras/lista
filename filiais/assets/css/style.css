@@ -35,10 +35,10 @@ Googel Fonts  */
 }
 
 .consorcio {
-    width: 53px;
+    width: 70px;
     height: 35px;
     background: url(../../images/logo_consorcio.png) 1px 4px no-repeat;
-    background-size: 50px;
+    background-size: 70px;
 }
 
 .audi {
@@ -113,7 +113,7 @@ a.dropdown-toggle {
 }
 
 .nomeFilial {
-    padding-left: 60px;
+    padding-left: 85px;
 }
 
 .nomeCompania {
