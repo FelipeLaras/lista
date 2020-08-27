@@ -9,6 +9,10 @@
     <title>RAMAIS - Grupo Servopa</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--Efeitos-->
+    <link rel="stylesheet" href="../_efeitos/css/hover.css">
+    <link rel="stylesheet" href="../_efeitos/css/hover-min.css">
     
     <!--Favicon-->
     <link rel="shortcut icon" href="../_img/favicon.ico">
@@ -303,10 +307,12 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title"> Lista de Ramais</strong>
+                                <a href="http://rede.paranapart.com.br/atualizeRamal.html" class="hvr-underline-from-center" target="_blank">
+                                    <p class="text-left"><i class="fa fa-question-circle" style="color: blue"></i> Você já atualizou o <b style="color:red">SEU RAMAL</b>?</p>
+                                </a>                                
                                 <?php
                                     if(empty($_GET['dep']) && empty($_POST['pesquisaFiliais'])){
-                                        echo '<div class="row" style="margin-top: -27px;margin-left: 94%;">
+                                        echo '<div class="row" style="margin: -40px 0px 0px 96%;">
                                                 <form action="printPdf.php" method="GET">
                                                     <input value='.$_GET['locations'].' type="text" style="display:none" name="locations"/>
                                                     <button type="submit" class="btn btn-outline-secondary" title="Imprimir em PDF"><i class="fa fa-print"></i></button>
