@@ -307,7 +307,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <a href="http://rede.paranapart.com.br/atualizeRamal.html" class="hvr-underline-from-center" target="_blank">
+                                <a href="http://rede.paranapart.com.br/atualizeRamal.php" class="hvr-underline-from-center" target="_blank">
                                     <p class="text-left"><i class="fa fa-question-circle" style="color: blue"></i> Você já atualizou o <b style="color:red">SEU RAMAL</b>?</p>
                                 </a>                                
                                 <?php
