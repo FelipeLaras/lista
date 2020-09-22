@@ -59,6 +59,7 @@
                             <li><i class="fa fa-minus"></i><a href="index.php?locations=11">Maringá</a></li>
                             <li><i class="fa fa-minus"></i><a href="index.php?locations=24">Caminhões Curitiba</a></li>
                             <li><i class="fa fa-minus"></i><a href="index.php?locations=35">Caminhões Cambé</a></li>
+                            <li><i class="fa fa-minus"></i><a href="index.php?locations=25">Vecodil</a></li>
                         </ul>
                     </li>  
                     <!--CONSÓRCIO-->
@@ -267,10 +268,21 @@
             include('conexao.php'); 
 
             //Informações da localização  
-            $query_company = "SELECT name, address AS endereco, postcode AS piloto, town AS voip, state AS cnpj, country AS razao_social FROM `glpi_locations` WHERE id = ".$_GET['locations']."";
-            $resultado_company = mysqli_query($conn, $query_company);
+            $query_company = "SELECT 
+                                name, 
+                                address AS endereco, 
+                                postcode AS piloto, 
+                                town AS voip, 
+                                state AS cnpj, 
+                                country AS razao_social,
+                                building AS mapa    
+                            FROM 
+                                glpi_locations
+                            WHERE 
+            id = ".$_GET['locations']."";
+            $resultado_company = $conn -> query($query_company);
 
-            $row_company = mysqli_fetch_assoc($resultado_company);
+            $row_company = $resultado_company -> fetch_assoc();
 
             if(empty($_POST['pesquisaFiliais'])){
                 echo '<div class="breadcrumbs">
@@ -294,11 +306,35 @@
                         </div>
                         <div class="col-lg-6 ">
                             <section class="card">
-                                <div class="card-body text-secondary"><i class="fa fa-map-marker"></i> '.$row_company["endereco"].'</div>
+                                <div class="card-body text-secondary">
+                                    <i class="fa fa-map-marker"></i> '.$row_company["endereco"].'
+                                    <a href="javascript" class="mapaLink" type="button" data-toggle="modal" data-target="#smallmodal" title="Exibir no mapa">
+                                        <i class="fa fa-globe"></i>
+                                    </a>
+                                </div>
                             </section>
                         </div>
                     </div>
-                </div>';
+                </div>
+
+                <!--MODAL-->
+                <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content" style="width: 211%; margin-left: -37%;">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="smallmodalLabel">'.$row_company["name"].'</h2>
+                            <h5 class="modal-title" id="smallmodalLabel">'.$row_company["endereco"].'</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p><iframe src="'.$row_company["mapa"].'" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!--FIM MODAL-->';
             }
         ?>     
         <div class="content">
@@ -337,10 +373,20 @@
                                         <?php
                                         
                                             //criando a pesquisa
-                                            $query = "SELECT GU.id, GU.firstname AS nome, GU.phone AS ramal, GU.realname AS departamento, GUM.email AS email, L.name AS filial, L.town AS voip, postcode AS piloto
-                                                            FROM glpi_users GU
-                                                            LEFT JOIN glpi_useremails GUM ON GUM.users_id = GU.id
-                                                            LEFT JOIN glpi_locations L ON GU.locations_id = L.id
+                                            $query = "SELECT 
+                                                            GU.id, GU.firstname AS nome, 
+                                                            GU.phone AS ramal, 
+                                                            GU.realname AS departamento, 
+                                                            GUM.email AS email, 
+                                                            L.name AS filial, 
+                                                            L.town AS voip, 
+                                                            postcode AS piloto
+                                                        FROM 
+                                                            glpi_users GU
+                                                        LEFT JOIN 
+                                                            glpi_useremails GUM ON GUM.users_id = GU.id
+                                                        LEFT JOIN 
+                                                            glpi_locations L ON GU.locations_id = L.id
                                                             WHERE ";
 
                                             if(empty($_POST['pesquisaFiliais'])){
