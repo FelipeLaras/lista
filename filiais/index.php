@@ -263,9 +263,8 @@
         </header><!-- /header -->
         <!-- Header-->
         
-        <?php 
-        
-            include('conexao.php'); 
+        <?php         
+            require_once('conexao.php'); 
 
             //Informações da localização  
             $query_company = "SELECT 
@@ -280,61 +279,63 @@
                                 glpi_locations
                             WHERE 
             id = ".$_GET['locations']."";
-            $resultado_company = $conn -> query($query_company);
 
-            $row_company = $resultado_company -> fetch_assoc();
+            if(!empty($resultado_company = $conn -> query($query_company))){           
 
-            if(empty($_POST['pesquisaFiliais'])){
-                echo '<div class="breadcrumbs">
+                $row_company = $resultado_company -> fetch_assoc();
+
+                if(empty($_POST['pesquisaFiliais'])){
+                    echo '<div class="breadcrumbs">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <section class="card">
+                                        <div class="card-body text-secondary"><h2 class="nomeCompania">'.$row_company["name"].'</h2></div>
+                                    </section>
+                                </div>
+                                <div class="col-lg-6 ">
+                                    <section class="card">
+                                        <div class="card-body text-secondary"><i class="fa fa-briefcase"></i> <b>Cnpj:</b> '.$row_company["cnpj"].'</div>
+                                    </section>
+                                </div>
+                            </div>        
                         <div class="row">
                             <div class="col-lg-6">
                                 <section class="card">
-                                    <div class="card-body text-secondary"><h2 class="nomeCompania">'.$row_company["name"].'</h2></div>
+                                    <div class="card-body text-secondary"><i class="fa fa-phone"></i> <b>Piloto:</b> '.$row_company["piloto"].'/ <b>Voip:</b>'.$row_company["voip"].'</div>
                                 </section>
                             </div>
                             <div class="col-lg-6 ">
                                 <section class="card">
-                                    <div class="card-body text-secondary"><i class="fa fa-briefcase"></i> <b>Cnpj:</b> '.$row_company["cnpj"].'</div>
+                                    <div class="card-body text-secondary">
+                                        <i class="fa fa-map-marker"></i> '.$row_company["endereco"].'
+                                        <a href="javascript" class="mapaLink" type="button" data-toggle="modal" data-target="#smallmodal" title="Exibir no mapa">
+                                            <i class="fa fa-globe"></i>
+                                        </a>
+                                    </div>
                                 </section>
                             </div>
-                        </div>        
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <section class="card">
-                                <div class="card-body text-secondary"><i class="fa fa-phone"></i> <b>Piloto:</b> '.$row_company["piloto"].'/ <b>Voip:</b>'.$row_company["voip"].'</div>
-                            </section>
-                        </div>
-                        <div class="col-lg-6 ">
-                            <section class="card">
-                                <div class="card-body text-secondary">
-                                    <i class="fa fa-map-marker"></i> '.$row_company["endereco"].'
-                                    <a href="javascript" class="mapaLink" type="button" data-toggle="modal" data-target="#smallmodal" title="Exibir no mapa">
-                                        <i class="fa fa-globe"></i>
-                                    </a>
-                                </div>
-                            </section>
                         </div>
                     </div>
-                </div>
 
-                <!--MODAL-->
-                <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
-                <div class="modal-dialog modal-sm" role="document">
-                    <div class="modal-content" style="width: 211%; margin-left: -37%;">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="smallmodalLabel">'.$row_company["name"].'</h2>
-                            <h5 class="modal-title" id="smallmodalLabel">'.$row_company["endereco"].'</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p><iframe src="'.$row_company["mapa"].'" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
+                    <!--MODAL-->
+                    <div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content" style="width: 211%; margin-left: -37%;">
+                            <div class="modal-header">
+                                <h2 class="modal-title" id="smallmodalLabel">'.$row_company["name"].'</h2>
+                                <h5 class="modal-title" id="smallmodalLabel">'.$row_company["endereco"].'</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p><iframe src="'.$row_company["mapa"].'" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-                <!--FIM MODAL-->';
+                    <!--FIM MODAL-->';
+                }
             }
         ?>     
         <div class="content">
@@ -405,8 +406,8 @@
                                             $query .= " AND GU.is_deleted = 0"; 
 
                                             //aplicando a regra e organizando na tela
-                                            if ($resultado = mysqli_query($conn, $query)){             
-                                                while($row = mysqli_fetch_assoc($resultado)){
+                                            if ($resultado = $conn -> query($query)){             
+                                                while($row = $resultado -> fetch_assoc()){
                                                     echo "<tr>
                                                             <td>".$row['nome']."</td>
                                                             <td>".$row['departamento']."</td>
@@ -428,7 +429,7 @@
                                                     echo "</tr>";             
                                                 }
                                             }         
-                                            mysqli_close($conn);
+                                            $conn -> close();
                                         ?>
                                     </tbody>
                                 </table>
@@ -438,8 +439,6 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-
-
         <div class="clearfix"></div>
 
         <footer class="site-footer">
@@ -454,7 +453,6 @@
                 </div>
             </div>
         </footer>
-
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
@@ -464,7 +462,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="assets/js/main.js"></script>
-
 
     <script src="assets/js/lib/data-table/datatables.min.js"></script>
     <script src="assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
@@ -476,7 +473,6 @@
     <script src="assets/js/lib/data-table/buttons.print.min.js"></script>
     <script src="assets/js/lib/data-table/buttons.colVis.min.js"></script>
     <script src="assets/js/init/datatables-init.js"></script>
-
 
     <script type="text/javascript">
         $(document).ready(function() {
