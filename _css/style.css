@@ -70,6 +70,18 @@
      background-color: rgba(246, 246, 246, 0.56);
      padding: 25px;
 }
+
+/* INDEX */
+img.rounded.mx-auto.d-block {
+    width: 54%;
+}
+
+#imgAtulizar {
+    position: absolute;
+    left: 40%;
+    top: 75%;
+}
+
 /*HEADER*/
  #cabeca {
      background-image: url(../../images/about-bg.jpg);
@@ -91,8 +103,6 @@
  #LogoPrincipal{
      width: 300px;
      position: absolute;
-}
- li {
 }
  a {
      font-family: 'Open Sans Condensed', sans-serif;
