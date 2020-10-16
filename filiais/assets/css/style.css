@@ -17,6 +17,13 @@
 
 Googel Fonts  */
 
+
+/*Fonte da tabela*/
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap');
+
+/**/
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 
 /* Googel Fonts End  
@@ -24,6 +31,18 @@ Googel Fonts  */
 */
 
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+
+/*Tabela dos ramais*/
+
+td {
+    font-size: 14px;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+.sorting_1 {
+    text-transform: uppercase;
+}
+
 
 /*LOGO FILIAIS*/
 
@@ -3518,6 +3537,9 @@ footer.site-footer .footer-inner a {
     left: inherit !important;
     right: 20px !important;
 }
+
+
+/*# sourceMappingURL=style.css.map */
 
 
 /*# sourceMappingURL=style.css.map */
