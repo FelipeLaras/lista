@@ -16,6 +16,7 @@
     
     <!--Favicon-->
     <link rel="shortcut icon" href="../_img/favicon.ico">
+    <script src="https://kit.fontawesome.com/7005bd725e.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -201,30 +202,21 @@
 
                     <li class="menu-title">Ramais - Departamentos</li><!-- /.menu-title -->
                     <!--CA-->
-                    <li>
-                        <a href="index.php?locations=6" title="CA"> <i class="menu-icon ti-home"></i>C.A</a>
-                    </li>
-
+                    <li><a href="index.php?locations=6" title="CA"><i class="fas fa-user-cog"></i> - C.A</a></li>
                     <!--AUDITORIA INTERNA-->
-                    <li>
-                        <a href="index.php?locations=4&dep=AUDITORIA" title="Auditoria Interna"> <i class="menu-icon ti-book"></i>Auditoria Interna</a>
-                    </li>
+                    <li><a href="index.php?locations=4&dep=AUDITORIA" title="Auditoria Interna"><i class="fas fa-clipboard-check"></i> - Auditoria Interna</a></li>
                     <!--OMNI CENTER-->
-                    <li>
-                        <a href="index.php?locations=4&dep=omni center" title="Omni Center"> <i class="menu-icon ti-headphone-alt"></i>Omni Center</a>
-                    </li>
+                    <li><a href="index.php?locations=4&dep=omni center" title="Omni Center"><i class="fas fa-headset"></i> - Omni Center</a></li>
                     <!--RH-->
-                    <li>
-                        <a href="index.php?locations=6&dep=RH" title="RH"> <i class="menu-icon ti-user"></i>R.H</a>
-                    </li>
+                    <li><a href="index.php?locations=6&dep=RH" title="RH"><i class="fas fa-users"></i> - R.H</a></li>
                     <!--TI-->
-                    <li>
-                        <a href="index.php?locations=4&dep=TI" title="TI"> <i class="menu-icon ti-hummer"></i>T.I</a>
-                    </li>
+                    <li><a href="index.php?locations=4&dep=TI" title="TI"><i class="fas fa-tools"></i> - T.I</a></li>
                     <!--CSC-->
-                    <li>
-                        <a href="index.php?locations=4&dep=CSC" title="CSC"> <i class="menu-icon ti-archive"></i>C.S.C</a>
-                    </li>
+                    <li><a href="index.php?locations=4&dep=CSC" title="CSC"><i class="fas fa-archive"></i> - C.S.C</a></li>
+                    <!--AGENDAMENTO-->
+                    <li><a href="index.php?locations=4&dep=agendamento" title="AGENDAMENTO"><i class="fas fa-calendar-alt"></i> - Agendamento</a></li>
+                    <!--DESPACHANTE-->
+                    <li><a href="index.php?locations=29&dep=despachante" title="DESPACHANTE"><i class="fas fa-truck-pickup"></i> - Despachante</a></li>
                    
                 </ul>
             </div><!-- /.navbar-collapse -->
