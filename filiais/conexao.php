@@ -1,5 +1,4 @@
 <?php
-
     //variaveis para conexao
 
     $servername = 'localhost';
@@ -16,6 +15,5 @@
         die("Conexão Falhou: " . $conn->connect_error);
     }else{
         //echo "Conexão ON";
-    }
-	
+    }	
 ?>
