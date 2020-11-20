@@ -3,6 +3,7 @@
 <link href="_css/ie.css" rel="stylesheet" type="text/css">
 <!--<![endif]-->
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -29,7 +30,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118964886-1"></script>
     <link rel="stylesheet" href="_css/style.css" />
     <!--Fa icons-->
-    <link href="icon/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7005bd725e.js" crossorigin="anonymous"></script>
     <!--Func�es-->
     <script type="text/javascript" src="_js/jquery.js"></script>
     <!--Imgem-->
@@ -61,266 +62,301 @@
     </style>
 </head>
 
+<header>
+    <!--HEADER-->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="javascript:">
+                    <img src="_img/logo.png" alt="" id="logo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!--PESQUISA POR NOME-->
+    <div id="fomrulario_pesquisa">
+        <form id="formulario" action="filiais/index.php" method="POST" name="caracteres">
+            <h3>Nome ou Ramal ou Departamento</h3>
+            <input id="text" type="text" placeholder="Pesquisa" name="pesquisaFiliais" onkeyup="maiuscula(this)">
+            <button id="submit" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
+            <br>
+            <span id="informativo">Informe apenas um dos elementos!</span>
+        </form>
+    </div>
+</header>
+
 <body>
     <div id="container2">
         <!--Departamentos-->
         <div class="logo11">
             <ul id="ul_prin">
-                <!--VOIP
-                <li class="li_prin" style="margin-right: -39px; margin-left: -19px;">
-                    <a href="https://docs.google.com/spreadsheets/d/1uWceDt0uutDht5B40BJ0bZO8LsWK43qboVWQ4di3pos/edit#gid=986394949" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/voip.png" /></a>
-                </li> -->
-                <!--CPD-->
+                <!--TI-->
                 <li class="li_prin">
-                    <a href="filiais/index.php?locations=4&dep=TI" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/cpd.png" /></a>
+                    <a href="filiais/index.php?locations=4&dep=TI" class="hvr-grow-shadow" title="Departamento de Informatica">
+                        <i class="fas fa-tools fa-2x"></i>
+                        <br />
+                        <spa>T.I</span>
+                    </a>
                 </li>
                 <!--AUDITORIA-->
                 <li class="li_prin">
-                    <a href="filiais/index.php?locations=4&dep=AUDITORIA" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/auditoria.png" /></a>
+                    <a href="filiais/index.php?locations=4&dep=AUDITORIA" class="hvr-grow-shadow" title="Auditoria">
+                        <i class="fas fa-clipboard-check fa-2x"></i>
+                        <br />
+                        <span>AUDITORIA</span>
+                    </a>
                 </li>
                 <!--CENTRO ADMINISTRATIVO-->
                 <li class="li_prin">
-                    <a href="filiais/index.php?locations=6" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/ca.png" /></a>
+                    <a href="filiais/index.php?locations=6" class="hvr-grow-shadow" title="Centro Administrativo">
+                        <i class="fas fa-user-cog fa-2x"></i>
+                        <br />
+                        <span>C.A</span>
+                    </a>
                 </li>
                 <!--RH-->
                 <li class="li_prin">
-                    <a href="filiais/index.php?locations=6&dep=RH" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/rh.png" /></a>
+                    <a href="filiais/index.php?locations=6&dep=RH" class="hvr-grow-shadow" title="Recursos Humanos">
+                        <i class="fas fa-users fa-2x"></i>
+                        <br />
+                        <span>R.H</span>
+                    </a>
                 </li>
                 <!--CSC-->
                 <li class="li_prin">
-                    <a href="filiais/index.php?locations=4&dep=CSC" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/csc.png" /></a>
+                    <a href="filiais/index.php?locations=4&dep=CSC" class="hvr-grow-shadow" title="C.S.C">
+                        <i class="fas fa-archive fa-2x"></i>
+                        <br />
+                        <span>C.S.C</span>
+                    </a>
                 </li>
                 <!--OMNICENTER-->
                 <li class="li_prin">
-                    <a href="filiais/index.php?locations=4&dep=omni center" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/omnicenter.png" style="margin-top: 12px;" /></a>
+                    <a href="filiais/index.php?locations=4&dep=omni center" class="hvr-grow-shadow" title="Omni Center">
+                        <i class="fas fa-headset fa-2x"></i>
+                        <br />
+                        <span>OMNI-CENTER</span>
+                    </a>
                 </li>
                 <!--DESPACHANTE-->
                 <li class="li_prin">
-                    <a href="filiais/index.php?locations=29&dep=despachante" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/despachante.png" style="margin-top: 12px;" /></a>
+                    <a href="filiais/index.php?locations=29&dep=despachante" class="hvr-grow-shadow" title="Despachanete Celestino">
+                        <i class="fas fa-truck-pickup fa-2x"></i>
+                        <br />
+                        <span>DESPACHANTE</span>
+                    </a>
                 </li>
-                <!--CONSORCIO
-               <li class="li_prin">
-                  <a href="https://docs.google.com/spreadsheets/d/1e1BBD18mF3eQzcI99V1OwxPURSy4eO3FC0HWAD5NycY/edit?usp=sharing" class="hvr-grow-shadow"><img class="imgTamanho" src="_img/consorcio.png" /></a>
-               </li>-->
+                <!--AGENDAMENTO-->
+                <li class="li_prin">
+                    <a href="filiais/index.php?locations=4&dep=agendamento" class="hvr-grow-shadow" title="Agendamento">
+                        <i class="fas fa-calendar-alt fa-2x"></i>
+                        <br />
+                        <span>AGENDAMENTO</span>
+                    </a>
+                </li>
             </ul>
         </div>
-        <!--ADM-->
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  </button>
-                    <a class="navbar-brand" href="javascript:">
-                        <img src="_img/logo.png" alt="" id="logo">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--PESQUISA POR NOME-->
-        <div id="fomrulario_pesquisa">
-            <form id="formulario" action="filiais/index.php" method="POST" name="caracteres">
-                <h3>Nome ou Ramal ou Departamento</h3>
-                <input id="text" type="text" placeholder="Pesquisa" name="pesquisaFiliais" onkeyup="maiuscula(this)">
-                <span id="informativo">Informe apenas um dos elementos!</span>
-                <button id="submit" type="submit"><i class="fa fa-search fa-2x" aria-hidden="true"></i></button>
-            </form>
-        </div>
     </div>
-    <!--Servopa Carros-->
-    <div class="tamanho" style="margin-right: -13px;">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/automoveis.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=4">Matriz</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=5">Marechal</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=7">Pinheirinho</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=17">Mário Tourinho</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=22">Paranaguá</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=79">Paranavaí</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=13">PG Oficinas</a></li>
-                        <!--<li><a class="hvr-underline-from-center" href="filiais/index.php?locations=15">PG Nova Rússia</a></li>-->
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=11">Maringá</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=24">Caminhões Curitiba</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=35">Caminhões Cambé</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=25">Vecodil</a></li>
-                    </ul>
+    <div class="listFiliais">
+
+        <hr>
+        <ul id="filiais">
+            <!--Servopa Carros-->
+            <li class="tamanho">
+                <div id="container">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/automoveis.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=4 ">Matriz</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=5 ">Marechal</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=7 ">Pinheirinho</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=17 ">Mário Tourinho</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=22 ">Paranaguá</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=79 ">Paranavaí</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=13 ">PG Oficinas</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=11 ">Maringá</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=24 ">Caminhões Curitiba</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=35 ">Caminhões Cambé</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=25 ">Vecodil</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Servopa Carros Fim-->
-    <!--Audi-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/audi.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=84">Mário Tourinho</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=91">Alto da XV</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=85">Cascavel</a></li>
-                    </ul>
+            </li>
+            <!--Servopa Carros Fim-->
+            <!--Audi-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/audi.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=84 ">Mário Tourinho</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=91 ">Alto da XV</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=85 ">Cascavel</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Audi Fim-->
-    <!--Sevec-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/hyunday.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=9">Marechal</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=10">Arthur Bernardes</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=43">C. Porto Alegre</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=44">C. Canoas</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=46">C. Bento Gonçalves</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=45">C. Novo Hamburgo</a></li>
-                    </ul>
+            </li>
+            <!--Audi Fim-->
+            <!--Sevec-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/hyunday.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=9 ">Marechal</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=10 ">Arthur Bernardes</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=43 ">C. Porto Alegre</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=44 ">C. Canoas</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=46 ">C. Bento Gonçalves</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=45 ">C. Novo Hamburgo</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Sevec Fim-->
-    <!--Honda-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/honda.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=1">Mário Tourinho</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=2">S.J. dos Pinhais</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=3">Maringá</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=28">Londrina</a></li>
-                    </ul>
+            </li>
+            <!--Sevec Fim-->
+            <!--Honda-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/honda.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=1 ">Mário Tourinho</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=2 ">S.J. dos Pinhais</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=3 ">Maringá</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=28 ">Londrina</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Honda Fim-->    
-    <!--Dijon-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/peugeot.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=59">Porto Alegre</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=60">Avant</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=58">LeMans</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=61">Canoas</a></li>
-                    </ul>
+            </li>
+            <!--Honda Fim-->
+            <!--Dijon-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/peugeot.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=59 ">Porto Alegre</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=60 ">Avant</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=58 ">LeMans</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=61 ">Canoas</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Dijon Fim-->
-    <!--Volvo-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/volvo.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=96">Curitiba</a></li>
-                    </ul>
+            </li>
+            <!--Dijon Fim-->
+            <!--Volvo-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/volvo.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=96 ">Curitiba</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Volvo Fim-->
-    <!--CITROEN-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/citroen.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=92">Ceará</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=93">Jardim Botânico</a></li>
-                    </ul>
+            </li>
+            <!--Volvo Fim-->
+            <!--CITROEN-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/citroen.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=92 ">Ceará</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=93 ">Jardim Botânico</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--CITROEN Fim-->
-    <!--Consorcio-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/consorcio.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=54">Londrina</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=56">Cascavel</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=80">CA</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=52">Goiânia</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=55">Maringá</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=30">Matriz</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=53">Ponta Grossa</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=51">Uberlândia</a></li>
-                    </ul>
+            </li>
+            <!--CITROEN Fim-->
+            <!--Consorcio-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/consorcio.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=54 ">Londrina</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=56 ">Cascavel</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=80 ">CA</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=52 ">Goiânia</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=55 ">Maringá</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=30 ">Matriz</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=53 ">Ponta Grossa</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=51 ">Uberlândia</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Consorcio Fim-->
-    <!--Harley-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/harley.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=18">Curitiba</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=21">Londrina</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=42">Cascavel</a></li>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=97">Ribeirão Preto</a></li>
-                    </ul>
+            </li>
+            <!--Consorcio Fim-->
+            <!--Harley-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/harley.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=18 ">Curitiba</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=21 ">Londrina</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=42 ">Cascavel</a></li>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=97 ">Ribeirão Preto</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!--Harley Fim-->
-    <!--Ducatti-->
-    <div class="tamanho">
-        <div id="container">
-            <div class="logo1">
-                <div id="tabela">
-                    <img class="imgTamanho" src="_img/ducati.jpg" />
-                    <ul>
-                        <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=20">Curitiba</a></li>
-                    </ul>
+            </li>
+            <!--Harley Fim-->
+            <!--Ducatti-->
+            <li class="tamanho">
+                <div id="container ">
+                    <div class="logo1 ">
+                        <div id="tabela ">
+                            <img class="imgTamanho " src="_img/ducati.jpg " />
+                            <ul>
+                                <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=20 ">Curitiba</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--triumph-->
+                    <div id="tabela ">
+                        <img class="imgTamanho " src="_img/triumph.jpg " />
+                        <ul>
+                            <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=19 ">Curitiba</a></li>
+                            <li><a class="hvr-underline-from-center " href="filiais/index.php?locations=32 ">Londrina</a></li>
+                        </ul>
+                    </div>
+                    <!--triumph Fim-->
                 </div>
-            </div>  
-            <!--triumph-->          
-            <div id="tabela">
-                <img class="imgTamanho" src="_img/triumph.jpg" />
-                <ul>
-                    <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=19">Curitiba</a></li>
-                    <li><a class="hvr-underline-from-center" href="filiais/index.php?locations=32">Londrina</a></li>
-                </ul>
-            </div>
-            <!--triumph Fim-->
-        </div> 
-        <div id="imgAtulizar">
-            <figure class="figure">
-                <a href="http://rede.paranapart.com.br/atualizeRamal.php" target="_blank" class="hvr-bob">
-                    <img src="_img/atualize_ramal.jpg" class="rounded mx-auto d-block" alt="atualize_ramal">
-                </a>
-                <!--<figcaption class="figure-caption">A caption for the above image.</figcaption>-->
-              </figure>
-        </div>       
+            </li>
+            <!--Ducatti Fim-->
+        </ul>
     </div>
-    <!--Ducatti Fim-->        
 </body>
+<footer>
+    <div id="imgAtulizar">
+        <figure class="figure ">
+            <a href="http://rede.paranapart.com.br/atualizeRamal.php " target="_blank " class="hvr-bob ">
+                <img src="_img/atualize_ramal.jpg " class="rounded mx-auto d-block " alt="atualize_ramal ">
+            </a>
+            <!--<figcaption class="figure-caption ">A caption for the above image.</figcaption>-->
+        </figure>
+    </div>
+</footer>
 
 </html>
