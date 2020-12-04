@@ -171,15 +171,16 @@ h3 {
 /* INDEX */
 
 img.rounded.mx-auto.d-block {
-    width: 54%;
+    width: 152%;
+}
+a.hvr-bob {
+    width: 20%;
 }
 
 #imgAtulizar {
-    position: absolute;
-    left: 40%;
-    top: 438px;
+    margin-left: 47%;
+    margin-top: -126px;
 }
-
 
 /*HEADER*/
 
