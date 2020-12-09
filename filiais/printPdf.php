@@ -2,7 +2,7 @@
 
 $filial = $_GET['locations'];
 
-$linhas = 50;
+$linhas = 65;
 
 $linhaAtual = 0;
 
@@ -25,31 +25,29 @@ $pdf = '
     </heade>
     <style>';
 
-    ($filial != 4) ? $pdf .= '.table{font-size: 10px;width: 315px;}' : $pdf .= '.table{ font-size: 4px; width: 215px;}';
+  ($filial != 4) ? $pdf .= '.table{font-size: 10px;width: 315px;}' : $pdf .= '.table{font-size: 8px;width: 275px;}';
 
     $pdf .= '
-    
     .table2 {
         position: absolute;
-        left: 217px;
         top: 0px;
+        left: 281px;
     }
-    
     .table3 {
         position: absolute;
-        left: 435px;
         top: 0px;
+        left: 562px;
+    }
+    .table4 {
+        position: absolute;
+        top: 0px;
+        left: 845px;
     }
     .table5 {
         position: absolute;
-        left: 219px;
-        top: 0px;
-    }
-    .table6 {
-        position: absolute;
-        top: 0px;
-        left: 438px;
-    }
+        top: 1419px;
+        left: 281px;
+    }    
     </style>
     <body>
         <table class="table table-sm table-striped table-bordered table1">
@@ -197,6 +195,16 @@ $pdf .= '</tbody></table></body>';
 
 mysqli_close($conn);
 
+
+
+if($filial == 4){
+
+    echo $pdf;
+
+    exit;
+
+}
+
 require_once 'dompdf/autoload.inc.php';
 require_once 'dompdf/lib/html5lib/Parser.php';
 require_once 'dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
@@ -213,14 +221,11 @@ $dompdf = new Dompdf();
 $dompdf->loadHtml($pdf);
 
 // (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'portrait');
+$dompdf->setPaper('A4', 'landscape');
 
 // Render the HTML as PDF
 $dompdf->render();
 
 // Output the generated PDF to Browser
-$dompdf->stream('lista_ramal.pdf',array("Attachment"=>1));//1 - Download 0 - Previa
-
-exit(0);
-
+$dompdf->stream('lista_ramal.pdf',array("Attachment"=>0));//1 - Download 0 - Previa
 ?>
