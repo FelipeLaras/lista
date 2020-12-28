@@ -195,14 +195,9 @@ $pdf .= '</tbody></table></body>';
 
 mysqli_close($conn);
 
-
-
 if($filial == 4){
-
     echo $pdf;
-
     exit;
-
 }
 
 require_once 'dompdf/autoload.inc.php';
@@ -228,4 +223,3 @@ $dompdf->render();
 
 // Output the generated PDF to Browser
 $dompdf->stream('lista_ramal.pdf',array("Attachment"=>0));//1 - Download 0 - Previa
-?>
