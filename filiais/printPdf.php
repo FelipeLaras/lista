@@ -25,7 +25,7 @@ $pdf = '
     </heade>
     <style>';
 
-  ($filial != 4) ? $pdf .= '.table{font-size: 10px;width: 315px;}' : $pdf .= '.table{font-size: 8px;width: 275px;}';
+$pdf .= '.table{font-size: 8px;width: 275px;}';
 
     $pdf .= '
     .table2 {
@@ -195,7 +195,7 @@ $pdf .= '</tbody></table></body>';
 
 mysqli_close($conn);
 
-if($filial == 4){
+if(!empty($filial)){
     echo $pdf;
     exit;
 }
