@@ -18,6 +18,11 @@
 
 a.hvr-grow-shadow {
     text-align: center;
+    text-decoration: none;
+}
+
+.text-decoration{
+    text-decoration: none;
 }
 
 ul#filiais {
@@ -26,9 +31,6 @@ ul#filiais {
 
 .listFiliais {
     margin-top: 205px;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 }
 
 li.tamanho {
@@ -153,7 +155,6 @@ h3 {
 
 .imgTamanho {
     width: 110px;
-    margin-left: -3px;
 }
 
 .imgFtp {
@@ -694,6 +695,10 @@ ul.menu {
 
 
 /*Tabela*/
+
+.left{    
+    margin-left: -18px;
+}
 
 
 /* Methods */
