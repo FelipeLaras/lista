@@ -41,15 +41,10 @@ li.li_prin {
     margin-left: 20px;
 }
 
-=======
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
-    margin-left: -142px;
-}
-
 li.tamanho {
     margin-left: 16px;
 }
-<<<<<<< HEAD
+
 
 li.li_prin {
     margin-left: 20px;
@@ -68,13 +63,13 @@ i.fas {
 
 /*fomrulario_pesquisa*/
 
-=======
+
 
 li.li_prin {
     margin-left: 20px;
 }
 
->>>>>>> 0c2a758b76d16ae820889338effa3f9b8f1706f6
+
 i.fas {
     color: #808080 !important;
 }
@@ -88,26 +83,32 @@ i.fas {
 
 /*Formulario*/
 
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
 #text {
     border-radius: 6px;
     width: 249px;
     height: 37px;
     font-size: 15px;
-    padding: 6px;
+    padding: 6px;    
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 #submit {
     border-radius: 6px;
     width: 42px;
-    height: 39px;
+    height: 37px;
     padding-bottom: 4px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    margin-bottom: 7px;
+    margin-left: -4px;
 }
 
 div#fomrulario_pesquisa {
     margin-left: 74%;
     margin-top: 80px;
-<<<<<<< HEAD
+
 }
 
 span#informativo {
@@ -119,29 +120,23 @@ h3 {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
-=======
-<<<<<<< HEAD
-}
 
 span#informativo {
     color: red;
     font-size: 11px;
 }
 
-=======
-}
 
 span#informativo {
     color: red;
     font-size: 11px;
 }
 
->>>>>>> 0c2a758b76d16ae820889338effa3f9b8f1706f6
+
 h3 {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
 
 /*Alinhamento das Logos*/
 
@@ -279,10 +274,8 @@ li.hvr-ripple-out {
 ._menu li:hover ul,
 ._menu li.over ul {
     display: block;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
+
 }
 
 ._menu li ul li {
@@ -331,7 +324,7 @@ li .borda {
     font-weight: bold;
     font-size: 14px;
     color: #c30;
-<<<<<<< HEAD
+
 }
 
 select {
@@ -358,9 +351,6 @@ ul {
     margin-top: 115px;
 }
 
-=======
-}
-
 select {
     padding: 3px;
     border-radius: 11px;
@@ -383,7 +373,7 @@ ul {
 
 .logo11 {
     margin-top: 115px;
-=======
+
 }
 
 ._menu li ul li {
@@ -452,10 +442,10 @@ header {
 ul {
     list-style: none;
     margin-left: -31px;
->>>>>>> 0c2a758b76d16ae820889338effa3f9b8f1706f6
+
 }
 
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
 
 /*Configurações Padrões*/
 
@@ -484,12 +474,10 @@ ul.menu {
     font-size: 15px;
     border-radius: 5px;
     padding: 0 5px;
-<<<<<<< HEAD
+
 }
 
-=======
-<<<<<<< HEAD
-}
+
 
 .menu li {
     float: left;
@@ -497,20 +485,19 @@ ul.menu {
     position: relative;
 }
 
-=======
-}
 
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
+
 .menu li {
     float: left;
     width: auto;
     position: relative;
 }
 
-<<<<<<< HEAD
-=======
->>>>>>> 0c2a758b76d16ae820889338effa3f9b8f1706f6
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
+
+
+
 .menu li a {
     display: block;
     padding: 0 20px;
@@ -530,7 +517,7 @@ ul.menu {
     padding: 5px;
     width: 200px;
     border-radius: 0 0 5px 5px;
-<<<<<<< HEAD
+
 }
 
 .menu ul.submenu-1 a {
@@ -539,9 +526,6 @@ ul.menu {
     border-radius: 5px;
 }
 
-=======
-<<<<<<< HEAD
-}
 
 .menu ul.submenu-1 a {
     width: 195px;
@@ -549,8 +533,6 @@ ul.menu {
     border-radius: 5px;
 }
 
-=======
-}
 
 .menu ul.submenu-1 a {
     width: 195px;
@@ -558,8 +540,8 @@ ul.menu {
     border-radius: 5px;
 }
 
->>>>>>> 0c2a758b76d16ae820889338effa3f9b8f1706f6
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
+
 
 /* Configurações nivel 2*/
 
@@ -570,7 +552,7 @@ ul.menu {
     padding: 5px;
     width: 200px;
     border-radius: 0 5px 5px 5px;
-<<<<<<< HEAD
+
 }
 
 .menu ul.submenu-2 a {
@@ -579,8 +561,6 @@ ul.menu {
     border-radius: 5px;
 }
 
-=======
-}
 
 .menu ul.submenu-2 a {
     width: 191px;
@@ -588,7 +568,7 @@ ul.menu {
     border-radius: 5px;
 }
 
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
 
 /* Configurações nivel 3*/
 
@@ -599,7 +579,7 @@ ul.menu {
     padding: 5px;
     width: 200px;
     border-radius: 0 5px 5px 5px;
-<<<<<<< HEAD
+
 }
 
 .menu ul.submenu-3 a {
@@ -608,8 +588,12 @@ ul.menu {
     border-radius: 5px;
 }
 
-=======
-<<<<<<< HEAD
+
+
+.menu ul.submenu-3 a {
+    width: 160px;
+    padding: 0 20px;
+    border-radius: 5px;
 }
 
 .menu ul.submenu-3 a {
@@ -618,17 +602,8 @@ ul.menu {
     border-radius: 5px;
 }
 
-=======
-}
 
-.menu ul.submenu-3 a {
-    width: 160px;
-    padding: 0 20px;
-    border-radius: 5px;
-}
 
->>>>>>> 0c2a758b76d16ae820889338effa3f9b8f1706f6
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
 
 /*Configurações de cores*/
 
@@ -805,21 +780,21 @@ ul.menu {
 }
 
 @media screen and (max-width: 1024px) {
-<<<<<<< HEAD
+
     #fomrulario_pesquisa {
-=======
+
     #formulario {
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
         left: 95%;
         width: 32%;
         top: 4%;
     }
-<<<<<<< HEAD
+
 }
 
 @media screen and (max-width: 40px) {
     #fomrulario_pesquisa {
-=======
+
     .tamanho {
         margin-top: 19%;
     }
@@ -827,17 +802,17 @@ ul.menu {
 
 @media screen and (max-width: 40px) {
     #formulario {
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
         left: 82%;
     }
 }
 
 @media screen and (min-width: 1280px) {
-<<<<<<< HEAD
+
     #fomrulario_pesquisa {
-=======
+
     #formulario {
->>>>>>> a571842428a52ee4c9b644e4915a3e740e82d627
+
         left: 72%;
         width: 24%;
     }
